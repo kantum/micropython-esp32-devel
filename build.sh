@@ -8,7 +8,7 @@
 # ----
 
 ESP32_DEVEL=$HOME/esp32-devel
-GID_DIALOUT=`awk -F ':' '$1=="dialout" {print $3}' </etc/group`
+GID_DIALOUT=`awk -F ':' '$1=="dialout" || $1=="uucp" {print $3}' </etc/group`
 
 docker build -t esp32-devel \
 	--build-arg USER=$USER \
